@@ -111,7 +111,7 @@ PRIMARY KEY (anum)
 
 
 
-
+DELETE FROM tester WHERE tsn = 'A56077A1829029';
 
 
 
