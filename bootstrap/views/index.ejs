@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="TUF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Table Example</title>
+	<link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th> No </th>
+				<th> Tester SN </th>
+				<th> Type </th>
+				<th> Customer </th>
+				<th> Site </th>
+				<th> Customer ID </th> 
+				<th> Shipped on </th> 
+				<th> blade </th> 
+				<th> midplaen </th> 
+				<th> DUT Module </th> 
+				<th> fcm </th> 
+				<th> feb </th> 
+				<th> Blower Fan  </th> 
+				<th> Exhust Fan </th> 
+				<th> DNA3 </th> 
+				<th> APPS </th> 
+			</tr>
+		</thead>
+		<tbody>
+			<%for(var i=0;i<rows.length;i++) { %>
+			<tr>
+				<td><%=i%></td>
+				<td><a href="#"><%=rows[i].tsn%></a></td>
+				<td><%=rows[i].ttype%></td>
+				<td><%=rows[i].cname%></td>
+				<td><%=rows[i].csite%></td>
+				<td><%=rows[i].ctid%> </td>
+				<td><%=rows[i].shipdate.toISOString().slice(0,10).replace(/-/g,"")%> </td>
+				<td><%=rows[i].blade %> </td>
+				<td><%=rows[i].midplane %> </td>
+				<td><%=rows[i].dm %> </td>
+				<td><%=rows[i].fcm %> </td>
+				<td><%=rows[i].feb %> </td>
+				<td><%=rows[i].blowerfan %> </td>
+				<td><%=rows[i].exhustfan %> </td>
+				<td><%=rows[i].dna3ver %> </td>
+				<td><%=rows[i].appsver %> </td>
+			</tr>
+			<%}%>
+		</tbody>
+	</table>
+	<hr/>
+	<a class="btn btn-default pull-right">Write</a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<Script type="text/javascript" src="/js/bootstrap.js"></script>
+</body>
+</html>

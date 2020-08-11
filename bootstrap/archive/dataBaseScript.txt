@@ -1,0 +1,126 @@
+##########################################################
+Table Tester
+##########################################################
+CREATE TABLE tester (
+tsn VARCHAR(30) NOT NULL,
+ttype VARCHAR(30) NOT NULL,
+cname VARCHAR(30) NOT NULL,
+csite VARCHAR(30) ,
+ctid VARCHAR(30) ,
+shipdate DATE ,
+blade CHAR(15) ,
+midplane CHAR(15) ,
+dps CHAR(15) ,
+fcm CHAR(15) ,
+feb CHAR(15) ,
+dm CHAR(15) ,
+blowerfan VARCHAR(30),
+exhustfan VARCHAR(30),
+cdrive VARCHAR(30),
+ddrive VARCHAR(30),
+winver VARCHAR(30),
+sw0 VARCHAR(30),
+sw1  VARCHAR(30),
+sw2 VARCHAR(30),
+sw3 VARCHAR(30),
+sw4 VARCHAR(30),
+sw5 VARCHAR(30),
+remarks VARCHAR(10000),
+tdowndate DATE,
+tupdate DATE,
+PRIMARY KEY (tsn)
+);
+
+INSERT INTO tester (tsn,ttype,cname,csite,ctid,shipdate,
+blade,midplane,dps,fcm,feb,dm,blowerfan,exhustfan,
+ssdsize,hddsize,
+windowsver,dhcpver,nfsver,dna3ver,appsver,andromedaver,hprver,addsw1ver,addsw2ver,addsw3ver)
+VALUES ('A56077A1829029','IBIR','Micron','Singapore','IBIR-0001','2018-07-18',
+'02-56087-00C','02-56080-00A','','02-55987-00C','02-55988-00C','56105_U.2','DELTA BFB0512VHD-F00(X16)','DELTA FFB0412UHN (x8)',
+'111GB','',
+'Windows7','V2.4','V1.2.16','1.1.5','1.0.2d','','','','','');
+
+INSERT INTO tester (tsn,ttype,cname,csite,ctid,shipdate,
+blade,midplane,dps,fcm,feb,dm,blowerfan,exhustfan,
+ssdsize,hddsize,
+windowsver,dhcpver,nfsver,dna3ver,appsver,andromedaver,hprver,addsw1ver,addsw2ver,addsw3ver)
+VALUES ('A56077C1915011','IBIR','Micron','Singapore','IBIR-0002','2019-04-10',
+'02-56087-00C','02-56080-00A','','02-55987-00C','02-55988-00C','56105_U.2','DELTA BFB0512VHD-F00(X16)','DELTA FFB0412UHN (x8)',
+'111GB','',
+'Windows7','V2.4','V1.2.16','1.1.5','1.0.2d','','','','','');
+
+
+# table 구성 보기 
+DESC tester;
+
+SELECT * FROM tester;
+
+##########################################################
+Table staff
+##########################################################
+CREATE TABLE staff (
+id VARCHAR(255) NOT NULL,
+pw VARCHAR(255) NOT NULL,
+name VARCHAR(255) NOT NULL,
+depart VARCHAR(255) NOT NULL,
+location VARCHAR(255) NOT NULL,
+PRIMARY KEY (id)
+);
+
+INSERT INTO staff (id,pw,name,depart,location)
+VALUES ("bchang@neosem.com","a","Ben Chang","FAE","Korea");
+
+INSERT INTO staff (id,pw,name,depart,location)
+VALUES ("kpchoi@neosem.com","a","KeunPil Choi","FSE","Korea");
+
+
+##########################################################
+Table issue
+##########################################################
+CREATE TABLE issue (
+inum INT AUTO_INCREMENT NOT NULL,
+rid VARCHAR(255) NOT NULL, 
+ititle VARCHAR(255) NOT NULL, 
+idesc VARCHAR(10000) NOT NULL, 
+tsn VARCHAR(30) NOT NULL,
+iopendate DATE,
+iclosedate DATE,
+istate VARCHAR(255) NOT NULL,
+cause VARCHAR(2000),
+solution VARCHAR(2000),
+PRIMARY KEY (inum) 
+);
+
+
+##########################################################
+Corrective Action
+##########################################################
+CREATE TABLE action (
+anum int AUTO_INCREMENT NOT NULL NOT NULL,
+inum int NOT NULL,
+sid VARCHAR(255) NOT NULL,
+astartdate DATE,
+aenddate DATE,
+adesc VARCHAR(10000) NOT NULL,
+attachment VARCHAR(255),
+PRIMARY KEY (anum)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

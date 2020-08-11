@@ -1,0 +1,10 @@
+https://tworab.tistory.com/71
+
+npm init
+npm i express
+npm i 
+npm i express mysql
+npm i  ejs --save
+npm i body-parser
+
+

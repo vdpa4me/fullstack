@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="TUF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Details</title>
+	<link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<table class="table table-hover">
+		<tbody>
+			<%for(var i=0;i<rows.length;i++) { %>
+			<tr>
+                <tr> 
+                    <td>Tester SN </td>
+                    <td><%=rows[i].tsn%></td>
+                </tr>
+                <tr> 
+                    <td>Type</td>
+                    <td><%=rows[i].ttype%></td>
+                </tr>
+                <tr> 
+                    <td>Customer </td>
+                    <td><%=rows[i].cname%></td>
+                </tr>
+                <tr> 
+                    <td>Site </td>
+                    <td><%=rows[i].csite%></td>
+                </tr>
+                <tr> 
+                    <td>User`s Tester ID</td>
+                    <td><%=rows[i].ctid%></td>
+                </tr>
+                <tr> 
+                    <td>Shipped on  </td>
+                    <td><%=rows[i].shipdate.toISOString().slice(0,10).replace(/-/g,"")%></td>
+                </tr>
+                <tr> 
+                    <td>Blade  </td>
+                    <td><%=rows[i].blade%></td>
+                </tr>
+                <tr> 
+                    <td>Midplane  </td>
+                    <td><%=rows[i].midplane%></td>
+                </tr>
+                <tr> 
+                    <td>FCM  </td>
+                    <td><%=rows[i].fcm%></td>
+                </tr>
+                <tr> 
+                    <td>FEB  </td>
+                    <td><%=rows[i].feb%></td>
+                </tr>
+                <tr> 
+                    <td>DUT Module   </td>
+                    <td><%=rows[i].dm%></td>
+                </tr>
+	
+			</tr>
+			<%}%>
+		</tbody>
+	</table>
+	<hr/>
+	<a class="btn btn-default pull-right">Write</a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<Script type="text/javascript" src="/js/bootstrap.js"></script>
+</body>
+</html>
